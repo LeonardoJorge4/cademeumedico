@@ -34,6 +34,7 @@ class Especialidades extends \yii\db\ActiveRecord
         return [
             [['Titulo'], 'required'],
             [['texto'], 'string'],
+            [['criado_em', 'atualizado_em'], 'safe'],
             [['status'], 'integer'],
             [['Titulo'], 'string', 'max' => 60],
             [['SubTitulo'], 'string', 'max' => 255],

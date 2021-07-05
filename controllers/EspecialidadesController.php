@@ -43,5 +43,4 @@ class EspecialidadesController extends \yii\web\Controller
     public function actionDelete(){
         
     }
-
 }

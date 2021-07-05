@@ -21,7 +21,6 @@ $this->title = Yii::$app->name;
           <div class="carousel-caption">
               <h1>Bem Vindo ao Cadê meu Médico.</h1>
               <p>Encontre seu médico e/ou a Especialidade Desjada Aqui.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
         </div>
@@ -49,7 +48,6 @@ $this->title = Yii::$app->name;
                 <img src="/img/medicoUrso.jpg" alt="" class="img-responsive">
             </div>
         </div>  
-        <hr class="featurette-divider">
 
         <div class="row featurette">
         <div class="col-md-7">
@@ -60,27 +58,14 @@ $this->title = Yii::$app->name;
         <img src="/img/gallery/gallery-4.jpg" alt="" class="img-responsive">
         </div>
       </div>
-      <hr class="featurette-divider">
-      
       
       <div class="row">
+      <?php foreach ($medicos as $key => $medico): ?>
         <div class="col-lg-4 text-center">
-          <img class="img-circle" src="/img/doctors/medico.jpg" alt="Generic placeholder image" width="240" height="240">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+          <img class="img-circle" src="<?php $medico->Imagem ?>" alt="Foto do Dr. <?php $medico->Nome ?>" width="240" height="240">
+          <h2><?= $medico->Nome ?></h2>
+          <p><?= $medico->CRM ?></p>
+          <p><a class="btn btn-default" href="<?= yii\helpers\Url::toRoute(['medicos/view', 'id' => $medico->Medico_id]) ?>" role="button">View details »</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 text-center">
-        <img class="img-circle" src="/img/doctors/medico.jpg" alt="Generic placeholder image" width="240" height="240">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 text-center">
-        <img class="img-circle" src="/img/doctors/medico.jpg" alt="Generic placeholder image" width="240" height="240">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+      <?php endforeach; ?>
       </div>
-      <hr class="featurette-divider">

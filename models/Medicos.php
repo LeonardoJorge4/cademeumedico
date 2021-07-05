@@ -70,4 +70,21 @@ class Medicos extends \yii\db\ActiveRecord
             'status' => Yii::t('app', 'Status'),
         ];
     }
+
+    public function destaque($flag = 1)
+    {
+        $this->andFilterWhere(['=', 'medico.destaque', $flag]);
+        return $this;
+    }
+
+    public function status($flag = 1)
+    {
+        $this->andFilterWhere(['=', 'medico.status', $flag]);
+        return $this;
+    }
+
+    public function getMedicoHasEspecialidades()
+    {
+        return $this->hasMany(MedicoHasEspecialidades::className(), ['Medico_id' => 'Medico_id']);
+    }
 }

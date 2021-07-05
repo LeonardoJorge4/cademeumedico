@@ -9,6 +9,8 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\widgets\Emailmkt;
+use PharIo\Manifest\Email;
 
 AppAsset::register($this);
 
@@ -33,6 +35,7 @@ if(navigator.geolocation) {
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -83,8 +86,8 @@ if(navigator.geolocation) {
         </div> 
 <footer class="footer">
     <div class="container">
+        <?= Emailmkt::widget() ?>
         <p class="pull-left">&copy; <?= Yii::$app->name ?> <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 
