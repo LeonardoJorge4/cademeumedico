@@ -34,7 +34,7 @@ class ClinicasController extends \yii\web\Controller
         ->setMargin(5)
         ->useForegroundColor(0, 0, 0);
 
-        $qrCode->writeFile(Yii::getAlias('@web') . "img/code/{$clinica->Clinica_id}-{$clinica->Nome}.png");
+        $qrCode->writeFile(Yii::getAlias('@web') . "img/gallery/{$clinica->Clinica_id}-{$clinica->Nome}.png");
 
         return $this->render('view', [
             "clinica" => $clinica,

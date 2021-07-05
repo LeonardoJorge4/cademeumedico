@@ -16,11 +16,11 @@ $this->title = Yii::$app->name;
       <div class="carousel-inner" role="listbox">
        
         <div class="item active">
-          <img class="first-slide img-responsive" src="/img/shakeitbololo.jpg" alt="First slide">
+          <img class="first-slide img-responsive" src="/img/departments-4.jpg" alt="First slide">
           <div class="container">
           <div class="carousel-caption">
               <h1>Bem Vindo ao Cadê meu Médico.</h1>
-              <p>Encontre seu médico e/ou a Especialidade Desjada Aqui.</p>
+              <p>Encontre seu médico e/ou a Especialidade Desejada Aqui.</p>
             </div>
           </div>
         </div>
@@ -39,15 +39,17 @@ $this->title = Yii::$app->name;
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img src="/img/medicoUrso.jpg" alt="" class="img-responsive">
+                <img src="/img/departments-1.jpg" alt="" class="img-responsive">
             </div>
             <div class="col-md-4">
-                <img src="/img/medicoUrso.jpg" alt="" class="img-responsive">
+                <img src="/img/departments-2.jpg" alt="" class="img-responsive">
             </div>
             <div class="col-md-4">
-                <img src="/img/medicoUrso.jpg" alt="" class="img-responsive">
+                <img src="/img/departments-3.jpg" alt="" class="img-responsive">
             </div>
         </div>  
+
+        <hr>
 
         <div class="row featurette">
         <div class="col-md-7">
@@ -62,7 +64,7 @@ $this->title = Yii::$app->name;
       <div class="row">
       <?php foreach ($medicos as $key => $medico): ?>
         <div class="col-lg-4 text-center">
-          <img class="img-circle" src="<?php $medico->Imagem ?>" alt="Foto do Dr. <?php $medico->Nome ?>" width="240" height="240">
+          <img class="img-circle" src="/img/doctors/doctors-1.jpg" alt="Foto do Dr. <?php $medico->Nome ?>" width="240" height="240">
           <h2><?= $medico->Nome ?></h2>
           <p><?= $medico->CRM ?></p>
           <p><a class="btn btn-default" href="<?= yii\helpers\Url::toRoute(['medicos/view', 'id' => $medico->Medico_id]) ?>" role="button">View details »</a></p>
