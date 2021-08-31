@@ -11,7 +11,7 @@ class Email extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'Email';
+        return 'email';
     }
 
     /**
@@ -20,8 +20,8 @@ class Email extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'e_mail'], 'required'],
-            [['e_mail'], 'email']
+            [['nome', 'email'], 'required'],
+            [['email'], 'email']
         ];
     }
 

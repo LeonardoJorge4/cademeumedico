@@ -48,9 +48,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <?php foreach($medico->medicoHasEspecialidades as $key => $especialidade): ?>
         <div class="col-lg-4">
-            <img src="<?= $especialidade->especialidades->Imagem; ?>" class="img-responsive" alt="<?= $especialidade->especialidades->titulo; ?>" />
-            <h2><?= $especialidade->especialidades->titulo; ?></h2>
-            <?= $especialidade->especialidades->SubTitulo; ?>
+            <img src="<?= $especialidade->Especialidades->Imagem; ?>" class="img-responsive" alt="<?= $especialidade->Especialidades->Titulo; ?>" />
+            <h2><?= $especialidade->Especialidades->Titulo; ?></h2>
+            <?= $especialidade->Especialidades->SubTitulo; ?>
             <p><a class="btn btn-primary" href="<?= Url::to('especialidades/view') ?>" role="button">Ver Detalhes >></a></p>
         </div>
         <?php if((++$key > 0) and ($key % 3 == 0)): ?>

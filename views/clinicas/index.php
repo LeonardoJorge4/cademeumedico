@@ -21,8 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
             Endereço: <?php echo $linha->Endereco?><br>
             Bairro: <?php echo $linha->Bairro?> <br>
             Cidade: <?php echo $linha->Cidade?> - <?php echo $linha->UF?> <br> 
-            Email: <?= $linha->email; ?> <br>
-            Telefone: <?= $linha->telefone; ?>
+            Email: <?= $linha->Email; ?> <br>
+            Telefone: <?= $linha->Telefone; ?>
           </p>
         <p><a class="btn btn-primary" href="<?= Url::toRoute(['clinicas/view', 'id' => $linha->Clinica_id]) ?>" role="button">Ver Detalhes »</a></p>
       </div>

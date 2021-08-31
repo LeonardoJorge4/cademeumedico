@@ -5,9 +5,9 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "Especialidades".
+ * This is the model class for table "especialidade".
  *
- * @property int $Especialidades_id
+ * @property int $Especialidade_id
  * @property string $Titulo
  * @property string|null $SubTitulo
  * @property string|null $texto
@@ -23,7 +23,7 @@ class Especialidades extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'Especialidades';
+        return 'especialidade';
     }
 
     /**
@@ -33,7 +33,7 @@ class Especialidades extends \yii\db\ActiveRecord
     {
         return [
             [['Titulo'], 'required'],
-            [['texto'], 'string'],
+            [['Texto'], 'string'],
             [['criado_em', 'atualizado_em'], 'safe'],
             [['status'], 'integer'],
             [['Titulo'], 'string', 'max' => 60],
@@ -48,7 +48,7 @@ class Especialidades extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Especialidades_id' => Yii::t('app', 'Especialidades ID'),
+            'Especialidade_id' => Yii::t('app', 'Especialidades ID'),
             'Titulo' => Yii::t('app', 'Titulo'),
             'SubTitulo' => Yii::t('app', 'Sub Titulo'),
             'texto' => Yii::t('app', 'Texto'),

@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "Medico_has_Especialidades".
+ * This is the model class for table "medico_has_especialidade".
  *
  * @property int $Medico_id
  * @property int $Especialidades_id
@@ -25,7 +25,7 @@ class MedicoHasEspecialidades extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'Medico_has_Especialidades';
+        return 'medico_has_especialidade';
     }
 
     /**
@@ -34,12 +34,12 @@ class MedicoHasEspecialidades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Medico_id', 'Especialidades_id', 'Clinica_id', 'status'], 'required'],
-            [['Medico_id', 'Especialidades_id', 'Clinica_id', 'status'], 'integer'],
+            [['Medico_id', 'Especialidade_id', 'Clinica_id', 'status'], 'required'],
+            [['Medico_id', 'Especialidade_id', 'Clinica_id', 'status'], 'integer'],
             [['criado_em', 'atualizado_em'], 'safe'],
-            [['Medico_id', 'Especialidades_id', 'Clinica_id'], 'unique', 'targetAttribute' => ['Medico_id', 'Especialidades_id', 'Clinica_id']],
+            [['Medico_id', 'Especialidade_id', 'Clinica_id'], 'unique', 'targetAttribute' => ['Medico_id', 'Especialidade_id', 'Clinica_id']],
             [['Clinica_id'], 'exist', 'skipOnError' => true, 'targetClass' => Clinica::className(), 'targetAttribute' => ['Clinica_id' => 'Clinica_id']],
-            [['Especialidades_id'], 'exist', 'skipOnError' => true, 'targetClass' => Especialidades::className(), 'targetAttribute' => ['Especialidades_id' => 'Especialidades_id']],
+            [['Especialidade_id'], 'exist', 'skipOnError' => true, 'targetClass' => Especialidades::className(), 'targetAttribute' => ['Especialidade_id' => 'Especialidade_id']],
             [['Medico_id'], 'exist', 'skipOnError' => true, 'targetClass' => Medicos::className(), 'targetAttribute' => ['Medico_id' => 'Medico_id']],
         ];
     }
@@ -51,7 +51,7 @@ class MedicoHasEspecialidades extends \yii\db\ActiveRecord
     {
         return [
             'Medico_id' => Yii::t('app', 'Medico ID'),
-            'Especialidades_id' => Yii::t('app', 'Especialidades ID'),
+            'Especialidade_id' => Yii::t('app', 'Especialidades ID'),
             'Clinica_id' => Yii::t('app', 'Clinica ID'),
             'criado_em' => Yii::t('app', 'Criado Em'),
             'atualizado_em' => Yii::t('app', 'Atualizado Em'),
@@ -76,7 +76,7 @@ class MedicoHasEspecialidades extends \yii\db\ActiveRecord
      */
     public function getEspecialidades()
     {
-        return $this->hasOne(Especialidades::className(), ['Especialidades_id' => 'Especialidades_id']);
+        return $this->hasOne(Especialidades::className(), ['Especialidade_id' => 'Especialidade_id']);
     }
 
     /**

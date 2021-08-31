@@ -24,10 +24,10 @@ class ClinicasController extends \yii\web\Controller
 
         $format = new MeCardFormat();
         $format->firstName = $clinica->Nome;
-        $format->email = $clinica->email;
+        $format->email = $clinica->Email;
         $format->note = $clinica->Cidade;
         $format->address = $clinica->Endereco . ", " . $clinica->Bairro;
-        $format->phone = $clinica->telefone;
+        $format->phone = $clinica->Telefone;
 
         $qrCode = (new QrCode($format))
         ->setSize(250)

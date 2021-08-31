@@ -38,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <?php $auxEspecialidades = []; ?>
     <?php foreach($clinica->medicoHasEspecialidades as $key => $especialidade): ?>
-        <?php if(!in_array($especialidade->especialidades->Especialidades_id, $auxEspecialidades)):
-            $auxEspecialidades[] = $especialidade->especialidades->Especialidades_id; ?>
+        <?php if(!in_array($especialidade->especialidades->Especialidade_id, $auxEspecialidades)):
+            $auxEspecialidades[] = $especialidade->especialidades->Especialidade_id; ?>
             <div class="col-lg-4">
                 <img src="<?= $especialidade->especialidades->Imagem; ?>" class="img-responsive" alt="<?= $especialidade->especialidades->titulo; ?>" />
                 <h2><?= $especialidade->especialidades->titulo; ?></h2>

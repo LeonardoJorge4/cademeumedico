@@ -28,7 +28,7 @@ class Medicos extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'Medico';
+        return 'medico';
     }
 
     /**
@@ -38,14 +38,14 @@ class Medicos extends \yii\db\ActiveRecord
     {
         return [
             [['CRM'], 'required'],
-            [['ibge', 'tem_clinica', 'status'], 'integer'],
+            [['tem_clinica', 'status'], 'integer'],
             [['criado_em', 'atualizado_em'], 'safe'],
             [['CRM'], 'string', 'max' => 18],
-            [['Nome', 'email'], 'string', 'max' => 80],
+            [['Nome', 'Email'], 'string', 'max' => 80],
             [['Endereco', 'site', 'Imagem'], 'string', 'max' => 145],
-            [['Bairro'], 'string', 'max' => 60],
+            [['Bairro', 'Cidade', 'UF'], 'string', 'max' => 60],
             [['CRM'], 'unique'],
-            [['telefone'], 'integer', 'max' => 9]
+            [['Telefone'], 'integer']
         ];
     }
 
@@ -60,8 +60,7 @@ class Medicos extends \yii\db\ActiveRecord
             'Nome' => Yii::t('app', 'Nome'),
             'Endereco' => Yii::t('app', 'Endereco'),
             'Bairro' => Yii::t('app', 'Bairro'),
-            'ibge' => Yii::t('app', 'Ibge'),
-            'email' => Yii::t('app', 'Email'),
+            'Email' => Yii::t('app', 'Email'),
             'tem_clinica' => Yii::t('app', 'Tem Clinica'),
             'site' => Yii::t('app', 'Site'),
             'Imagem' => Yii::t('app', 'Imagem'),

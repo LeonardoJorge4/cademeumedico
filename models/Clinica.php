@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "Clinica".
+ * This is the model class for table "clinica".
  *
  * @property int $Clinica_id
  * @property string $Nome
@@ -27,7 +27,7 @@ class Clinica extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'Clinica';
+        return 'clinica';
     }
 
     /**
@@ -36,8 +36,8 @@ class Clinica extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Clinica_id', 'Nome'], 'required'],
-            [['Clinica_id', 'ibge', 'status'], 'integer'],
+            [['Clinica_id', 'Nome', 'Telefone', 'Email'], 'required'],
+            [['Clinica_id', 'status'], 'integer'],
             [['criado_em', 'atualizado_em'], 'safe'],
             [['Nome', 'Endereco', 'Cidade', 'Imagem'], 'string', 'max' => 145],
             [['CEP'], 'string', 'max' => 10],
@@ -60,7 +60,6 @@ class Clinica extends \yii\db\ActiveRecord
             'Bairro' => Yii::t('app', 'Bairro'),
             'Cidade' => Yii::t('app', 'Cidade'),
             'UF' => Yii::t('app', 'Uf'),
-            'ibge' => Yii::t('app', 'Ibge'),
             'Imagem' => Yii::t('app', 'Imagem'),
             'criado_em' => Yii::t('app', 'Criado Em'),
             'atualizado_em' => Yii::t('app', 'Atualizado Em'),

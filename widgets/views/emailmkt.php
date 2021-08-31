@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 
 <?php $form = ActiveForm::begin(); ?>
   <?= $form->field($model, 'nome') ?>
-  <?= $form->field($model, 'e_mail') ?>
+  <?= $form->field($model, 'email') ?>
   <div class="form-group">
     <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary'])?>
   </div>

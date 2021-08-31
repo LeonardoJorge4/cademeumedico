@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h2><?php echo $linha->Nome?></h2>
           <p>
             CRM: <?php echo $linha->CRM?> <br>
-            E-mail: <?php echo $linha->email?><br>
+            E-mail: <?php echo $linha->Email?><br>
           </p>
           
         <p><a class="btn btn-primary" href="<?= Url::toRoute(['medicos/view', 'id' => $linha->Medico_id]) ?>" role="button">Ver Detalhes »</a></p>
